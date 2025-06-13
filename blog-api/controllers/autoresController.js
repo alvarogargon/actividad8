@@ -1,5 +1,6 @@
 const pool = require('../models/db');
 
+// Obtener todos los autores
 exports.getAutores = async (req, res) => {
   try {
     const [rows] = await pool.query('SELECT * FROM autores');
@@ -22,6 +23,7 @@ exports.createAutor = async (req, res) => {
   }
 };
 
+// Obtener los posts de un autor concreto
 exports.getPostsDeAutor = async (req, res) => {
   try {
     const autorId = req.params.id;
